@@ -1,66 +1,23 @@
-## Foundry
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+Following commands are only for me & not for person who is checking the project
 
-Foundry consists of:
+create project
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
-
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
+```
+forge init simple_account
 ```
 
-### Test
+soldeer init, instead of using git submodules, I want to start using
 
-```shell
-$ forge test
+```
+forge soldeer init
 ```
 
-### Format
+install dependencies
 
-```shell
-$ forge fmt
+```
+forge soldeer install @openzeppelin-contracts~5.2.0
+
+forge soldeer install eth-infinitism-account-abstraction~0.7
 ```
 
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
