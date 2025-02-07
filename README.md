@@ -47,4 +47,4 @@ remappings_location = "config"
 
 ```
 
-
+I have modified the remappings for names I know and that's why regenerate remappings option is not set to `true` as it will change those remappings in case a soldeer command is executed.

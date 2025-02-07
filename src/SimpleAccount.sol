@@ -10,6 +10,8 @@ import {ECDSA} from "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
 contract SimpleAccount is BaseAccount, Ownable {
+    error SimpleAccount__callFailed(bytes data);
+
     IEntryPoint immutable i_entryPoint;
 
     constructor(IEntryPoint _entryPoint, address _owner) Ownable(_owner) {
@@ -31,6 +33,15 @@ contract SimpleAccount is BaseAccount, Ownable {
             return SIG_VALIDATION_SUCCESS;
         } else {
             return SIG_VALIDATION_FAILED;
+        }
+    }
+
+    function execute(address dest, uint256 value, bytes calldata data) public {
+        _requireFromEntryPoint();
+
+        (bool success, bytes memory ret) = dest.call{value: value}(data);
+        if (!success) {
+            revert SimpleAccount__callFailed(ret);
         }
     }
 }
