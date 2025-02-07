@@ -5,7 +5,7 @@
 
 ## To-Do List  
 
-- [ ] Finalize unit tests  
+- [x] Complete unit tests  
 - [ ] Complete integration tests  
 - [ ] Update README documentation  
 
