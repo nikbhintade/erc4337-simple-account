@@ -20,7 +20,7 @@ cd erc4337-simple-account
 Next, install dependencies using `soldeer` (I opted for this package manager instead of Foundry’s default Git submodule approach):
 
 ```bash
-forge soldeer init
+forge soldeer install
 ```
 
 This command will install all dependencies listed in `foundry.toml` under the `[dependencies]` section:
